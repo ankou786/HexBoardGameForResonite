@@ -2,7 +2,7 @@ import { Game } from "../../game";
 import { Canvas, HorizontalLayout } from "../../../unit/package/PrimitiveUix/main";
 import { StyledImage, StyledText } from "../../../unit/package/StyledUix/main";
 import { Slot } from "../../../unit/package/Primitive/main";
-import { Sprite,Color, Material } from "../style";
+import { Sprite, Color, Material } from "../style";
 
 export const ResultScene = ({ game }: { game: Game }) => {
   const winner = game.getWinner();
@@ -18,14 +18,14 @@ export const ResultScene = ({ game }: { game: Game }) => {
             paddingTop={5}
             spacing={5}
           >
-            <StyledImage styledSprite={Sprite.resoIcon}/>
-            <StyledText 
-              content={ "Winner ! : " + winner }
+            <StyledImage styledSprite={Sprite.resoIcon} />
+            <StyledText
+              content={"Winner ! : " + winner}
               horizontalAlign="Center"
               styledColor={Color.white}
               verticalAlign="Middle"
             />
-            <StyledImage styledSprite={Sprite.resoIcon}/>
+            <StyledImage styledSprite={Sprite.resoIcon} />
           </HorizontalLayout>
         </StyledImage>
       </Canvas>

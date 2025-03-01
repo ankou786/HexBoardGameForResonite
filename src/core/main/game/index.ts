@@ -132,14 +132,11 @@ export class Game {
       return;
     }
 
-    if (this.state.currentPlayer !== playerId) {
-      return;
-    }
-
     const player = this.state.players.find((player) => player.id === playerId);
     if (!player) {
       return;
     }
+    console.log("player: " + player.color);
 
     cell.cellState = {
       type: player.color,
@@ -191,7 +188,7 @@ export class Game {
       const winner = this.state.players.find(
         (player) => player.color === color
       );
-      console.log(winner);
+      //console.log(winner);
       if (winner) {
         this.state = {
           mode: "result",
