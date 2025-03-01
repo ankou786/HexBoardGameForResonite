@@ -1,6 +1,6 @@
 import { Slot } from "../../../unit/package/Primitive/main";
 import { MeshRenderer, CylinderCollider } from "../../../unit/package/StyledObject/main";
-import { Cell } from "../../game/map/cell";
+import { Cell } from "../../game/map";
 import { Material, Mesh } from "../style";
 
 export const CellRender = ({ cell }: { cell: Cell }) => (

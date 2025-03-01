@@ -3,7 +3,7 @@ import { Slot,LookAtUser } from "../../../unit/package/Primitive/main";
 import { Canvas} from "../../../unit/package/PrimitiveUix/main";
 import { Game } from "../../game";
 import { GameStateInGame } from "../../game/type";
-import { Cell } from "../../game/map/cell";
+import { Cell } from "../../game/map";
 import { CellRender } from "./cell";
 import { TouchButton } from "../../../unit/package/GameEvent/main";
 import { FunctionEnv } from "../../../../lib/miragex/common/interactionEvent";
@@ -11,7 +11,6 @@ import { Sprite,Color, Material } from "../style";
 import { StyledImage, StyledText } from "../../../unit/package/StyledUix/main";
 export const InGameScene = ({ game }: { game: Game }) => {
   const gameState = game.state as GameStateInGame;
-  //const [isToggled, setIsToggled] = useState(false);
 
   const handleHexClick = (cell: Cell, env: FunctionEnv) => {
     if (cell.cellState.type !== "blank") return; 
@@ -19,12 +18,6 @@ export const InGameScene = ({ game }: { game: Game }) => {
 
     game.setCellState(cell, env.userId);
     game.changePlayer();
-
-    // Debug
-    // const color = isToggled ? "red" : "blue";
-    // game.setCellState(cell, isToggled ? "U-test" : "U-ankou",color );
-    //setIsToggled(!isToggled);
-    //game.changePlayer(color);
   };
 
   return (

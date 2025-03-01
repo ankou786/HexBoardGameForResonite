@@ -1,5 +1,4 @@
-import { Player } from "./player";
-import { StageMap } from "../map";
+import { StageMap } from "./map";
 
 export type GameState = GameStateLobby | GameStateInGame | GameStateResult;
 
@@ -21,3 +20,9 @@ export type GameStateResult = GameStateCommon & {
   mode: "result";
   winner: string;
 };
+
+export type Player = {
+    id: string;
+    name: string;
+    color: "red" | "blue";
+  };

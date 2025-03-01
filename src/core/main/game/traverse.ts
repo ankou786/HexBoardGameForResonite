@@ -5,7 +5,7 @@ import {
   HexCoordinates,
   Traverser 
 } from "honeycomb-grid";
-import { Cell } from "./cell";
+import { Cell } from "./map";
 
 function aStarSearch(grid: Grid<Cell>, start: HexCoordinates, goal: HexCoordinates,color: "red" | "blue"): Cell[] {
   const openSet = new Set<Cell>();

@@ -1,8 +1,8 @@
 
 import { GameState,GameStateInGame } from "./type";
 import { StageMap } from "./map";
-import { Cell } from "./map/cell";
-import { customLine } from "./map/traverse";
+import { Cell } from "./map";
+import { customLine } from "./traverse";
 import { HexCoordinates} from "honeycomb-grid";
 //import e from "express";
 export class Game {
@@ -124,7 +124,6 @@ export class Game {
   }
 
   setCellState(cell:Cell, playerId: string) {
-  //setCellState(cell:Cell, playerId: string, color: "red" | "blue") {
     if (this.state.mode !== "inGame") {
       return;
     }
@@ -145,11 +144,8 @@ export class Game {
     cell.cellState = {
       type: player.color,
     };
-    // cell.cellState = {
-    //   type: color
-    // };
   }
-  //changePlayer(color: "red" | "blue") {
+
   changePlayer() {
     if (this.state.mode !== "inGame") {
       return;
@@ -162,7 +158,6 @@ export class Game {
       return;
     }
 
-    //this.checkWin (currentPlayer?.color);
     this.checkWin (currentPlayer.color);
     if (currentPlayer) {
       (this.state as GameStateInGame).currentPlayer = currentPlayer.id;
@@ -196,7 +191,6 @@ export class Game {
       const winner = this.state.players.find(
         (player) => player.color === color
       );
-      //const winner = "U-ankou";
       console.log(winner);
       if (winner) {
         this.state = {
