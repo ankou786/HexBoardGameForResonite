@@ -94,6 +94,21 @@ export const Main = () => {
               paddingTop={5}
               spacing={5}
             >
+              <HorizontalLayout
+                paddingBottom={5}
+                paddingLeft={5}
+                paddingRight={5}
+                paddingTop={5}
+              >
+                <StyledText
+                  content="Hex Board Game"
+                  horizontalAlign="Center"
+                  size={92}
+                  styledColor={Color.white}
+                  verticalAlign="Middle"
+                  verticalAutoSize
+                />
+              </HorizontalLayout>
               <HorizontalLayout>
                 <LayoutElement minWidth={380}>
                   <StyledText
