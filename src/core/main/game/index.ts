@@ -1,10 +1,9 @@
-
-import { GameState,GameStateInGame } from "./type";
+import { GameState, GameStateInGame } from "./type";
 import { StageMap } from "./map";
 import { Cell } from "./map";
 import { customLine } from "./traverse";
-import { HexCoordinates} from "honeycomb-grid";
-//import e from "express";
+import { HexCoordinates } from "honeycomb-grid";
+
 export class Game {
   state: GameState;
 
@@ -16,7 +15,7 @@ export class Game {
     };
   }
 
-  addPlayer(playerId: string) {
+  async addPlayer(playerId: string) {
     if (this.state.mode !== "lobby") {
       return;
     }
@@ -30,18 +29,26 @@ export class Game {
       return;
     }
 
-    // if (this.state.players.length === 1) {
-    //   playerId = "U-ankouHS aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-    // }
+    try {
+      const response = await fetch(`https://api.resonite.com/users/${playerId}`);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      const username = data.username;
+      
+      const playerColor: "red" | "blue" = this.state.players.length === 0 ? "red" : "blue";
+      const player = {
+        id: playerId,
+        name: username,
+        color: playerColor,
+      };
 
-    const playerColor: "red" | "blue" = this.state.players.length === 0 ? "red" : "blue";
-    const player = {
-      id: playerId,
-      name: playerId,
-      color: playerColor,
-    };
-
-    this.state.players.push(player);
+      this.state.players.push(player);
+    } catch (error) {
+      console.error("Failed to fetch username:", error);
+      this.state.message = "Failed to fetch username";
+    }
   }
 
   removePlayer(playerId: string) {
@@ -51,23 +58,23 @@ export class Game {
   }
 
   startGame() {
-    if (this.state.mode !== "lobby") return 
-    
-    if(this.state.players.length < 2) {
+    if (this.state.mode !== "lobby") return;
+
+    if (this.state.players.length < 2) {
       this.state.message = "Not enough players";
       return;
     }
     const randomIndex = Math.floor(Math.random() * this.state.players.length);
     const currentPlayer = this.state.players[randomIndex];
-    if (!currentPlayer) return
+    if (!currentPlayer) return;
 
     this.state = {
       mode: "inGame",
       players: this.state.players,
       map: new StageMap(),
-      currentPlayer: currentPlayer
+      currentPlayer: currentPlayer,
     };
-    
+
     for (let q = 0; q <= 11; q++) {
       const redCell = this.state.map.grid.getHex([0, q]);
       if (!redCell) {
@@ -98,7 +105,7 @@ export class Game {
         type: "red",
       };
 
-      const blueCell = this.state.map.grid.getHex([10-q, q+1]);
+      const blueCell = this.state.map.grid.getHex([10 - q, q + 1]);
       if (!blueCell) {
         continue;
       }
@@ -121,18 +128,18 @@ export class Game {
     if (players.length !== 1) {
       return "No player";
     }
-    const playerName = players[0]?.name
+    const playerName = players[0]?.name;
     return playerName;
   }
 
   getWinner() {
-    if (this.state.mode !== "result") { 
-      return ;  
+    if (this.state.mode !== "result") {
+      return;
     }
-    return this.state.winner; 
+    return this.state.winner;
   }
 
-  setCellState(cell:Cell, playerId: string) {
+  setCellState(cell: Cell, playerId: string) {
     if (this.state.mode !== "inGame") {
       return;
     }
@@ -145,7 +152,6 @@ export class Game {
     if (!player) {
       return;
     }
-    //console.log("player: " + player.color);
 
     cell.cellState = {
       type: player.color,
@@ -162,8 +168,8 @@ export class Game {
     if (!currentPlayer) {
       return;
     }
-    //console.log("change player: " + currentPlayer.color);
-    this.checkWin (currentPlayer.color);
+
+    this.checkWin(currentPlayer.color);
     if (this.state.mode === "inGame") {
       const nextPlayer = this.state.players.find(
         (player) => player.id !== (this.state as GameStateInGame).currentPlayer.id
@@ -174,12 +180,12 @@ export class Game {
     }
   }
 
-  checkWin (color: "red" | "blue" | undefined) {
+  checkWin(color: "red" | "blue" | undefined) {
     if (this.state.mode !== "inGame") {
       return;
     }
-    const map = this.state.map;
-    if(color === undefined){
+    const map = (this.state as GameStateInGame).map;
+    if (color === undefined) {
       return;
     }
     let srcCell: HexCoordinates;
@@ -192,14 +198,13 @@ export class Game {
       srcCell = [1, -1];
       dstCell = [9, 2];
     }
-    //console.log("check win: " + srcCell, color);
+
     const traverser = map.grid.traverse(
-      customLine({ start: srcCell , stop: dstCell , grid: map.grid, color: color}),
+      customLine({ start: srcCell, stop: dstCell, grid: map.grid, color: color }),
     );
-    //console.log(traverser.toArray());
     const traversedCells = traverser.toArray();
     if (traversedCells.length > 2) {
-      //console.log(color + " win");
+      console.log(color + " win");
       const winner = this.state.players.find(
         (player) => player.color === color
       );
@@ -217,9 +222,8 @@ export class Game {
           players: this.state.players,
           map: this.state.map,
           winner: winner.id,
-        }
+        };
       }
     }
   }
-
 }

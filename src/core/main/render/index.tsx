@@ -25,8 +25,8 @@ export const Main = () => {
   const [bluePlayer, setBluePlayer] = useState<string>("No player");
   const [gameMode, setGameMode] = useState<string>("lobby");
 
-  const joinPlayer = useCallback((env: FunctionEnv) => {
-    gameRef.current?.addPlayer(env.userId);
+  const joinPlayer = useCallback(async (env: FunctionEnv) => {
+    await gameRef.current?.addPlayer(env.userId);
     updatePlayers();
     effect();
   }, []);
