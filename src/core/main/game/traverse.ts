@@ -33,7 +33,7 @@ function aStarSearch(grid: Grid<Cell>, start: HexCoordinates, goal: HexCoordinat
         current = cameFrom.get(current)!;
         path.unshift(current);
       }
-      console.log(path);
+      //console.log(path);
       return path;
     }
 

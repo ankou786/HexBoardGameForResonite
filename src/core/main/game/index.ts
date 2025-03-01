@@ -50,13 +50,14 @@ export class Game {
       return;
     }
     const randomIndex = Math.floor(Math.random() * this.state.players.length);
-    const currentPlayerId = this.state.players[randomIndex]?.id || "";
+    const currentPlayer = this.state.players[randomIndex];
+    if (!currentPlayer) return
 
     this.state = {
       mode: "inGame",
       players: this.state.players,
       map: new StageMap(),
-      currentPlayer: currentPlayerId
+      currentPlayer: currentPlayer
     };
     
     for (let q = 0; q <= 11; q++) {
@@ -136,7 +137,7 @@ export class Game {
     if (!player) {
       return;
     }
-    console.log("player: " + player.color);
+    //console.log("player: " + player.color);
 
     cell.cellState = {
       type: player.color,
@@ -147,19 +148,22 @@ export class Game {
     if (this.state.mode !== "inGame") {
       return;
     }
-
     const currentPlayer = this.state.players.find(
-      (player) => player.id !== (this.state as GameStateInGame).currentPlayer
+      (player) => player.id === (this.state as GameStateInGame).currentPlayer.id
     );
     if (!currentPlayer) {
       return;
     }
 
     this.checkWin (currentPlayer.color);
-    if (currentPlayer) {
-      (this.state as GameStateInGame).currentPlayer = currentPlayer.id;
+    if (this.state.mode === "inGame") {
+      const nextPlayer = this.state.players.find(
+        (player) => player.id !== (this.state as GameStateInGame).currentPlayer.id
+      );
+      if (nextPlayer) {
+        (this.state as GameStateInGame).currentPlayer = nextPlayer;
+      }
     }
-    console.log("currentPlayer: " + (this.state as GameStateInGame).currentPlayer);
   }
 
   checkWin (color: "red" | "blue" | undefined) {
@@ -179,10 +183,11 @@ export class Game {
       srcCell = [1, -1];
       dstCell = [9, 2];
     }
+    //console.log("check win: " + srcCell, color);
     const traverser = this.state.map.grid.traverse(
       customLine({ start: srcCell , stop: dstCell , grid: this.state.map.grid, color: color}),
     );
-    console.log(traverser.toArray());
+    //console.log(traverser.toArray());
     if (traverser.toArray().length > 2) {
       console.log(color + " win");
       const winner = this.state.players.find(

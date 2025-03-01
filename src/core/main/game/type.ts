@@ -13,7 +13,7 @@ export type GameStateLobby = GameStateCommon & {
 export type GameStateInGame = GameStateCommon & {
   mode: "inGame";
   map: StageMap;
-  currentPlayer: string;
+  currentPlayer: Player;
 };
 
 export type GameStateResult = GameStateCommon & {

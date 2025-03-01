@@ -49,6 +49,8 @@ export const Main = () => {
     gameRef.current?.resetGame();
     if (gameRef.current) {
       setGameMode(gameRef.current.state.mode);
+      setRedPlayer("No player");
+      setBluePlayer("No player");
       effect();
     }
   }, []);

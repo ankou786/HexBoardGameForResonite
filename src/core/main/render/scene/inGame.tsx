@@ -15,7 +15,7 @@ export const InGameScene = ({ game,effect }: {game:Game,effect:()=>void }) => {
 
   const handleHexClick = useCallback((cell: Cell, env: FunctionEnv) => {
     if (cell.cellState.type !== "blank") return;
-    if (currentGameState.currentPlayer !== env.userId) {
+    if (currentGameState.currentPlayer.id !== env.userId) {
       console.log("not your turn:",currentGameState.currentPlayer, env.userId);
       return;
     }
@@ -32,7 +32,7 @@ export const InGameScene = ({ game,effect }: {game:Game,effect:()=>void }) => {
         <Canvas size={[1000, 250]}>
           <StyledImage nineSliceSizing="FixedSize" styledColor={Color.black} styledMaterial={Material.bg} styledSprite={Sprite.circle}>
               <StyledText 
-                content={ "Player Turn : " + currentGameState.currentPlayer }
+                content={ "Player Turn : " + currentGameState.currentPlayer.id }
                 horizontalAlign="Center"
                 styledColor={Color.white}
                 verticalAlign="Middle"
