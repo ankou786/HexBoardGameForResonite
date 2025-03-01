@@ -5,7 +5,7 @@ import { Game } from "../../game";
 import { GameStateInGame } from "../../game/type";
 import { Cell } from "../../game/map";
 import { CellRender } from "./cell";
-import { TouchButton } from "../../../unit/package/GameEvent/main";
+import { TouchButton, StyledTextUserName } from "../../../unit/package/GameEvent/main";
 import { FunctionEnv } from "../../../../lib/miragex/common/interactionEvent";
 import { Sprite,Color, Material } from "../style";
 import { StyledImage, StyledText } from "../../../unit/package/StyledUix/main";
@@ -31,13 +31,14 @@ export const InGameScene = ({ game,effect }: {game:Game,effect:()=>void }) => {
       <LookAtUser invert>
         <Canvas size={[1000, 250]}>
           <StyledImage nineSliceSizing="FixedSize" styledColor={Color.black} styledMaterial={Material.bg} styledSprite={Sprite.circle}>
-              <StyledText 
-                content={ "Player Turn : " + currentGameState.currentPlayer.id }
+              <StyledTextUserName
+                content="Player Turn : "
                 horizontalAlign="Center"
                 horizontalAutoSize
                 styledColor={Color.white}
+                userID={currentGameState.currentPlayer.name}
                 verticalAlign="Middle"
-                verticalAutoSize
+                verticalAutoSize                
               />
           </StyledImage>
         </Canvas>

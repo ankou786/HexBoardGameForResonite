@@ -1,5 +1,6 @@
 import { Game } from "../../game";
 import { Canvas, HorizontalLayout } from "../../../unit/package/PrimitiveUix/main";
+import { StyledTextUserName } from "../../../unit/package/GameEvent/main";
 import { StyledImage, StyledText } from "../../../unit/package/StyledUix/main";
 import { Slot } from "../../../unit/package/Primitive/main";
 import { Sprite, Color, Material } from "../style";
@@ -25,10 +26,11 @@ export const ResultScene = ({ game }: { game: Game }) => {
             spacing={5}
           >
             <StyledImage styledSprite={Sprite.resoIcon} />
-            <StyledText
-              content={"Winner ! : " + winner}
+            <StyledTextUserName
+              content="Winner ! : "
               horizontalAlign="Center"
               styledColor={Color.white}
+              userID={winner}
               verticalAlign="Middle"
               verticalAutoSize
             />

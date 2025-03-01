@@ -15,7 +15,7 @@ export class Game {
     };
   }
 
-  async addPlayer(playerId: string) {
+  addPlayer(playerId: string) {
     if (this.state.mode !== "lobby") {
       return;
     }
@@ -29,26 +29,26 @@ export class Game {
       return;
     }
 
-    try {
-      const response = await fetch(`https://api.resonite.com/users/${playerId}`);
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      const data = await response.json();
-      const username = data.username;
+    // try {
+    //   const response = await fetch(`https://api.resonite.com/users/${playerId}`);
+    //   if (!response.ok) {
+    //     throw new Error("Network response was not ok");
+    //   }
+    //   const data = await response.json();
+    //   const username = data.username;
       
       const playerColor: "red" | "blue" = this.state.players.length === 0 ? "red" : "blue";
       const player = {
         id: playerId,
-        name: username,
+        name:  playerId,
         color: playerColor,
       };
 
       this.state.players.push(player);
-    } catch (error) {
-      console.error("Failed to fetch username:", error);
-      this.state.message = "Failed to fetch username";
-    }
+    // } catch (error) {
+    //   console.error("Failed to fetch username:", error);
+    //   this.state.message = "Failed to fetch username";
+    // }
   }
 
   removePlayer(playerId: string) {
@@ -221,7 +221,7 @@ export class Game {
           mode: "result",
           players: this.state.players,
           map: this.state.map,
-          winner: winner.id,
+          winner: winner.name,
         };
       }
     }

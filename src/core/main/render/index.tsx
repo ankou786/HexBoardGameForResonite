@@ -6,6 +6,7 @@ import { Canvas, VerticalLayout, HorizontalLayout, LayoutElement } from "../../u
 import { StyledButton, StyledImage, StyledText } from "../../unit/package/StyledUix/main";
 import { SceneRender } from "./scene";
 import { StyledSpace, Sprite, Color, Material } from "./style";
+import { StyledTextUserName } from "../../unit/package/GameEvent/main";
 
 export const Main = () => {
   const [, setTime] = useState(0);
@@ -26,7 +27,7 @@ export const Main = () => {
   const [gameMode, setGameMode] = useState<string>("lobby");
 
   const joinPlayer = useCallback(async (env: FunctionEnv) => {
-    await gameRef.current?.addPlayer(env.userId);
+    gameRef.current?.addPlayer(env.userId);
     updatePlayers();
     effect();
   }, []);
@@ -104,10 +105,11 @@ export const Main = () => {
                   />
                 </LayoutElement>
                 <LayoutElement minWidth={500}>
-                  <StyledText
-                    content={redPlayer}
+                  <StyledTextUserName
+                    content={redPlayer === "No player" ? "No player" : ""}
                     horizontalAlign="Center"
                     styledColor={Color.white}
+                    userID={redPlayer}
                     verticalAlign="Middle"
                     verticalAutoSize
                   />
@@ -124,10 +126,11 @@ export const Main = () => {
                   />
                 </LayoutElement>
                 <LayoutElement minWidth={500}>
-                  <StyledText
-                    content={bluePlayer}
+                  <StyledTextUserName
+                    content={bluePlayer === "No player" ? "No player" : ""}
                     horizontalAlign="Center"
                     styledColor={Color.white}
+                    userID={bluePlayer}
                     verticalAlign="Middle"
                     verticalAutoSize
                   />
@@ -208,7 +211,7 @@ export const Main = () => {
           </StyledImage>
         </Canvas>
       </Slot>
-        <SceneRender effect={effect} game={gameRef.current} />
+      <SceneRender effect={effect} game={gameRef.current} />
     </StyledSpace>
   );
 };

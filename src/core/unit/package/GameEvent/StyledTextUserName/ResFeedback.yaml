@@ -1,0 +1,1307 @@
+Name:
+  ID: "?"
+  Data: GameEvent/StyledTextUserName
+Active:
+  ID: "?"
+  Data: true
+ID: "?"
+Persistent-ID: "?"
+Position:
+  ID: "?"
+  Data:
+    - 0
+    - 0
+    - 0
+Rotation:
+  ID: "?"
+  Data:
+    - 0
+    - 0
+    - 0
+    - 1
+Scale:
+  ID: "?"
+  Data:
+    - 1
+    - 1
+    - 1
+Tag:
+  ID: "?"
+  Data: null
+OrderOffset:
+  ID: "?"
+  Data: 0
+Components:
+  ID: "?"
+  Data:
+    - Type: 0
+      Data:
+        ID: "?"
+        persistent-ID: "?"
+        UpdateOrder:
+          ID: "?"
+          Data: 0
+        Enabled:
+          ID: "?"
+          Data: true
+        SpaceName:
+          ID: "?"
+          Data: null
+        OnlyDirectBinding:
+          ID: "?"
+          Data: false
+Children:
+  - Name:
+      ID: "?"
+      Data: DV
+    Active:
+      ID: "?"
+      Data: true
+    ID: "?"
+    Persistent-ID: "?"
+    Position:
+      ID: "?"
+      Data:
+        - 0
+        - 0
+        - 0
+    Rotation:
+      ID: "?"
+      Data:
+        - 0
+        - 0
+        - 0
+        - 111111
+    Scale:
+      ID: "?"
+      Data:
+        - 111111
+        - 111111
+        - 111111
+    Tag:
+      ID: "?"
+      Data: null
+    OrderOffset:
+      ID: "?"
+      Data: 0
+    Components:
+      ID: "?"
+      Data:
+        - Type: 1
+          Data:
+            ID: "?"
+            persistent-ID: "?"
+            UpdateOrder:
+              ID: "?"
+              Data: 0
+            Enabled:
+              ID: "?"
+              Data: true
+            VariableName:
+              ID: "?"
+              Data: Static.Ref
+            Reference:
+              ID: "?"
+              Data: ID:Ref:0
+            OverrideOnLink:
+              ID: "?"
+              Data: false
+    Children: []
+    ParentReference: ""
+  - Name:
+      ID: "?"
+      Data: Ref
+    Active:
+      ID: "?"
+      Data: true
+    ID: ID:Ref:0
+    Persistent-ID: "?"
+    Position:
+      ID: "?"
+      Data:
+        - 0
+        - 0
+        - 0
+    Rotation:
+      ID: "?"
+      Data:
+        - 0
+        - 0
+        - 0
+        - 111111
+    Scale:
+      ID: "?"
+      Data:
+        - 111111
+        - 111111
+        - 111111
+    Tag:
+      ID: "?"
+      Data: null
+    OrderOffset:
+      ID: "?"
+      Data: 0
+    Components:
+      ID: "?"
+      Data:
+        - Type: 0
+          Data:
+            ID: "?"
+            persistent-ID: "?"
+            UpdateOrder:
+              ID: "?"
+              Data: 0
+            Enabled:
+              ID: "?"
+              Data: true
+            SpaceName:
+              ID: "?"
+              Data: null
+            OnlyDirectBinding:
+              ID: "?"
+              Data: false
+    Children:
+      - Name:
+          ID: "?"
+          Data: StyledText
+        Active:
+          ID: "?"
+          Data: true
+        ID: ID:StyledText:0
+        Persistent-ID: "?"
+        Position:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+        Rotation:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+            - 111111
+        Scale:
+          ID: "?"
+          Data:
+            - 111111
+            - 111111
+            - 111111
+        Tag:
+          ID: "?"
+          Data: null
+        OrderOffset:
+          ID: "?"
+          Data: 0
+        Components:
+          ID: "?"
+          Data:
+            - Type: 2
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                Font:
+                  ID: ID:StyledText:Components:2:Font:0
+                  Data: ID:Assets:22:ID:2
+                Content:
+                  ID: ID:StyledText:Components:2:Content:0
+                  Data: ""
+                ParseRichText:
+                  ID: "?"
+                  Data: true
+                NullContent:
+                  ID: ID:StyledText:Components:2:NullContent:0
+                  Data: ""
+                Size:
+                  ID: ID:StyledText:Components:2:Size:0
+                  Data: 21333.333333333332
+                HorizontalAlign:
+                  ID: ID:StyledText:Components:2:HorizontalAlign:0
+                  Data: Left
+                VerticalAlign:
+                  ID: ID:StyledText:Components:2:VerticalAlign:0
+                  Data: Top
+                AlignmentMode:
+                  ID: "?"
+                  Data: Geometric
+                Color:
+                  ID: ID:StyledText:Components:2:Color:0
+                  Data:
+                    - 0
+                    - 0
+                    - 0
+                    - 333.3333333333333
+                    - sRGB
+                Materials:
+                  ID: "?"
+                  Data:
+                    - ID: ID:StyledText:Components:2:Materials.0.ID:0
+                      Data: ID:Assets:24:ID:2
+                LineHeight:
+                  ID: ID:StyledText:Components:2:LineHeight:0
+                  Data: 266.6666666666667
+                MaskPattern:
+                  ID: "?"
+                  Data: null
+                HorizontalAutoSize:
+                  ID: ID:StyledText:Components:2:HorizontalAutoSize:0
+                  Data: false
+                VerticalAutoSize:
+                  ID: ID:StyledText:Components:2:VerticalAutoSize:0
+                  Data: false
+                AutoSizeMin:
+                  ID: ID:StyledText:Components:2:AutoSizeMin:0
+                  Data: 2666.6666666666665
+                AutoSizeMax:
+                  ID: ID:StyledText:Components:2:AutoSizeMax:0
+                  Data: 21333.333333333332
+                CaretPosition:
+                  ID: "?"
+                  Data: -333.3333333333333
+                SelectionStart:
+                  ID: "?"
+                  Data: -333.3333333333333
+                CaretColor:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - 0
+                    - 0
+                    - 0
+                    - sRGBAlpha
+                SelectionColor:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - 0
+                    - 0
+                    - 0
+                    - sRGBAlpha
+                InteractionTarget:
+                  ID: "?"
+                  Data: true
+                _legacyFontMaterial-ID: "?"
+                _legacyAlign-ID: "?"
+            - Type: 3
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                AnchorMin:
+                  ID: ID:StyledText:Components:3:AnchorMin:0
+                  Data:
+                    - 0
+                    - 0
+                AnchorMax:
+                  ID: ID:StyledText:Components:3:AnchorMax:0
+                  Data:
+                    - 333.3333333333333
+                    - 333.3333333333333
+                OffsetMin:
+                  ID: ID:StyledText:Components:3:OffsetMin:0
+                  Data:
+                    - 0
+                    - 0
+                OffsetMax:
+                  ID: ID:StyledText:Components:3:OffsetMax:0
+                  Data:
+                    - 0
+                    - 0
+                Pivot:
+                  ID: "?"
+                  Data:
+                    - 166.66666666666666
+                    - 166.66666666666666
+            - Type: 4
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: ID:StyledText:Components:4:VariableName:0
+                  Data: ""
+                Target:
+                  ID: "?"
+                  Data: ID:StyledText:Components:2:Color:0
+                DefaultValue:
+                  ID: ID:StyledText:Components:4:DefaultValue:0
+                  Data:
+                    - 0
+                    - 0
+                    - 0
+                    - 333.3333333333333
+                    - sRGB
+            - Type: 5
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: ID:StyledText:Components:5:VariableName:0
+                  Data: ""
+                Target:
+                  ID: "?"
+                  Data: ID:StyledText:Components:2:Materials.0.ID:0
+                DefaultTarget:
+                  ID: "?"
+                  Data: ID:Assets:24:ID:2
+            - Type: 6
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: ID:StyledText:Components:6:VariableName:0
+                  Data: ""
+                Target:
+                  ID: "?"
+                  Data: ID:StyledText:Components:2:Font:0
+                DefaultTarget:
+                  ID: "?"
+                  Data: ID:Assets:22:ID:2
+        Children:
+          - Name:
+              ID: "?"
+              Data: Flux
+            Active:
+              ID: "?"
+              Data: true
+            ID: "?"
+            Persistent-ID: "?"
+            Position:
+              ID: "?"
+              Data:
+                - 0
+                - 0
+                - 0
+            Rotation:
+              ID: "?"
+              Data:
+                - 0
+                - 0
+                - 0
+                - 111111
+            Scale:
+              ID: "?"
+              Data:
+                - 111111
+                - 111111
+                - 111111
+            Tag:
+              ID: "?"
+              Data: null
+            OrderOffset:
+              ID: "?"
+              Data: 0
+            Components:
+              ID: "?"
+              Data:
+                - Type: 7
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    Value:
+                      ID: ID:Flux:Components:7:Value:0
+                      Data: null
+                - Type: 7
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    Value:
+                      ID: ID:Flux:Components:7:Value:1
+                      Data: null
+            Children:
+              - Name:
+                  ID: "?"
+                  Data: UserFromID
+                Active:
+                  ID: "?"
+                  Data: true
+                ID: "?"
+                Persistent-ID: "?"
+                Position:
+                  ID: "?"
+                  Data:
+                    - -37444.333333333336
+                    - 224666.66666666666
+                    - -49333.333333333336
+                Rotation:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - 666.6666666666666
+                    - 0
+                    - 111111
+                Scale:
+                  ID: "?"
+                  Data:
+                    - 111111
+                    - 111111
+                    - 111111
+                Tag:
+                  ID: "?"
+                  Data: null
+                OrderOffset:
+                  ID: "?"
+                  Data: 0
+                Components:
+                  ID: "?"
+                  Data:
+                    - Type: 8
+                      Data:
+                        ID: ID:UserFromID:Components:8:0
+                        persistent-ID: "?"
+                        UpdateOrder:
+                          ID: "?"
+                          Data: 0
+                        Enabled:
+                          ID: "?"
+                          Data: true
+                        UserId:
+                          ID: "?"
+                          Data: ID:ObjectValueSource`1:Components:9:0
+                        MachineId:
+                          ID: "?"
+                          Data: null
+                Children: []
+                ParentReference: ""
+              - Name:
+                  ID: "?"
+                  Data: ObjectValueSource`1
+                Active:
+                  ID: "?"
+                  Data: true
+                ID: "?"
+                Persistent-ID: "?"
+                Position:
+                  ID: "?"
+                  Data:
+                    - -62444.333333333336
+                    - 225889
+                    - -48000
+                Rotation:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - 2222.3333333333335
+                    - 0
+                    - 111111
+                Scale:
+                  ID: "?"
+                  Data:
+                    - 111111
+                    - 111111
+                    - 111111
+                Tag:
+                  ID: "?"
+                  Data: null
+                OrderOffset:
+                  ID: "?"
+                  Data: 0
+                Components:
+                  ID: "?"
+                  Data:
+                    - Type: 9
+                      Data:
+                        ID: ID:ObjectValueSource`1:Components:9:0
+                        persistent-ID: "?"
+                        UpdateOrder:
+                          ID: "?"
+                          Data: 0
+                        Enabled:
+                          ID: "?"
+                          Data: true
+                        Source:
+                          ID: "?"
+                          Data: ID:ObjectValueSource`1:Components:10:0
+                    - Type: 10
+                      Data:
+                        ID: ID:ObjectValueSource`1:Components:10:0
+                        persistent-ID: "?"
+                        UpdateOrder:
+                          ID: "?"
+                          Data: 0
+                        Enabled:
+                          ID: "?"
+                          Data: true
+                        Reference:
+                          ID: "?"
+                          Data: ID:Flux:Components:7:Value:0
+                Children: []
+                ParentReference: ""
+              - Name:
+                  ID: "?"
+                  Data: UserUsername
+                Active:
+                  ID: "?"
+                  Data: true
+                ID: "?"
+                Persistent-ID: "?"
+                Position:
+                  ID: "?"
+                  Data:
+                    - -19777.666666666668
+                    - 226333.33333333334
+                    - -50222.333333333336
+                Rotation:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - 4777.666666666667
+                    - 0
+                    - 111000
+                Scale:
+                  ID: "?"
+                  Data:
+                    - 111111
+                    - 111111
+                    - 111111
+                Tag:
+                  ID: "?"
+                  Data: null
+                OrderOffset:
+                  ID: "?"
+                  Data: 0
+                Components:
+                  ID: "?"
+                  Data:
+                    - Type: 11
+                      Data:
+                        ID: ID:UserUsername:Components:11:0
+                        persistent-ID: "?"
+                        UpdateOrder:
+                          ID: "?"
+                          Data: 0
+                        Enabled:
+                          ID: "?"
+                          Data: true
+                        User:
+                          ID: "?"
+                          Data: ID:UserFromID:Components:8:0
+                Children: []
+                ParentReference: ""
+              - Name:
+                  ID: "?"
+                  Data: ConcatenateString
+                Active:
+                  ID: "?"
+                  Data: true
+                ID: "?"
+                Persistent-ID: "?"
+                Position:
+                  ID: "?"
+                  Data:
+                    - -2000
+                    - 228222.33333333334
+                    - -51777.666666666664
+                Rotation:
+                  ID: "?"
+                  Data:
+                    - 5889
+                    - 3111
+                    - -111
+                    - 110889
+                Scale:
+                  ID: "?"
+                  Data:
+                    - 111111
+                    - 111111
+                    - 111111
+                Tag:
+                  ID: "?"
+                  Data: null
+                OrderOffset:
+                  ID: "?"
+                  Data: 0
+                Components:
+                  ID: "?"
+                  Data:
+                    - Type: 12
+                      Data:
+                        ID: ID:ConcatenateString:Components:12:0
+                        persistent-ID: "?"
+                        UpdateOrder:
+                          ID: "?"
+                          Data: 0
+                        Enabled:
+                          ID: "?"
+                          Data: true
+                        A:
+                          ID: "?"
+                          Data: ID:ObjectValueSource`1:Components:9:1
+                        B:
+                          ID: "?"
+                          Data: ID:UserUsername:Components:11:0
+                Children: []
+                ParentReference: ""
+              - Name:
+                  ID: "?"
+                  Data: ObjectValueSource`1
+                Active:
+                  ID: "?"
+                  Data: true
+                ID: "?"
+                Persistent-ID: "?"
+                Position:
+                  ID: "?"
+                  Data:
+                    - -28111
+                    - 235000
+                    - -42555.666666666664
+                Rotation:
+                  ID: "?"
+                  Data:
+                    - 6555.666666666667
+                    - 6000
+                    - -333.3333333333333
+                    - 110777.66666666667
+                Scale:
+                  ID: "?"
+                  Data:
+                    - 111111
+                    - 111111
+                    - 111111
+                Tag:
+                  ID: "?"
+                  Data: null
+                OrderOffset:
+                  ID: "?"
+                  Data: 0
+                Components:
+                  ID: "?"
+                  Data:
+                    - Type: 9
+                      Data:
+                        ID: ID:ObjectValueSource`1:Components:9:1
+                        persistent-ID: "?"
+                        UpdateOrder:
+                          ID: "?"
+                          Data: 0
+                        Enabled:
+                          ID: "?"
+                          Data: true
+                        Source:
+                          ID: "?"
+                          Data: ID:ObjectValueSource`1:Components:10:1
+                    - Type: 10
+                      Data:
+                        ID: ID:ObjectValueSource`1:Components:10:1
+                        persistent-ID: "?"
+                        UpdateOrder:
+                          ID: "?"
+                          Data: 0
+                        Enabled:
+                          ID: "?"
+                          Data: true
+                        Reference:
+                          ID: "?"
+                          Data: ID:Flux:Components:7:Value:1
+                Children: []
+                ParentReference: ""
+              - Name:
+                  ID: "?"
+                  Data: ObjectFieldDrive`1
+                Active:
+                  ID: "?"
+                  Data: true
+                ID: "?"
+                Persistent-ID: "?"
+                Position:
+                  ID: "?"
+                  Data:
+                    - 21555.666666666668
+                    - 227222.33333333334
+                    - -54889
+                Rotation:
+                  ID: "?"
+                  Data:
+                    - -3444.3333333333335
+                    - 18111
+                    - 555.6666666666666
+                    - 109555.66666666667
+                Scale:
+                  ID: "?"
+                  Data:
+                    - 111111
+                    - 111111
+                    - 111111
+                Tag:
+                  ID: "?"
+                  Data: null
+                OrderOffset:
+                  ID: "?"
+                  Data: 0
+                Components:
+                  ID: "?"
+                  Data:
+                    - Type: 13
+                      Data:
+                        ID: ID:ObjectFieldDrive`1:Components:13:0
+                        persistent-ID: "?"
+                        UpdateOrder:
+                          ID: "?"
+                          Data: 0
+                        Enabled:
+                          ID: "?"
+                          Data: true
+                        Value:
+                          ID: "?"
+                          Data: ID:ConcatenateString:Components:12:0
+                    - Type: 14
+                      Data:
+                        ID: "?"
+                        persistent-ID: "?"
+                        UpdateOrder:
+                          ID: "?"
+                          Data: 0
+                        Enabled:
+                          ID: "?"
+                          Data: true
+                        Node:
+                          ID: "?"
+                          Data: ID:ObjectFieldDrive`1:Components:13:0
+                        Path:
+                          ID: "?"
+                          Data: []
+                        Drive:
+                          ID: "?"
+                          Data: ID:StyledText:Components:2:Content:0
+                Children: []
+                ParentReference: ""
+            ParentReference: ""
+        ParentReference: ""
+      - Name:
+          ID: "?"
+          Data: DV/Static
+        Active:
+          ID: "?"
+          Data: true
+        ID: "?"
+        Persistent-ID: "?"
+        Position:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+        Rotation:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+            - 111111
+        Scale:
+          ID: "?"
+          Data:
+            - 111111
+            - 111111
+            - 111111
+        Tag:
+          ID: "?"
+          Data: null
+        OrderOffset:
+          ID: "?"
+          Data: 0
+        Components:
+          ID: "?"
+          Data:
+            - Type: 1
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Static.Root
+                Reference:
+                  ID: "?"
+                  Data: ID:Ref:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 1
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Static.Main
+                Reference:
+                  ID: "?"
+                  Data: ID:StyledText:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 1
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Static.ChildrenParent
+                Reference:
+                  ID: "?"
+                  Data: ID:StyledText:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+        Children: []
+        ParentReference: ""
+      - Name:
+          ID: "?"
+          Data: DV/Props
+        Active:
+          ID: "?"
+          Data: true
+        ID: "?"
+        Persistent-ID: "?"
+        Position:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+        Rotation:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+            - 111111
+        Scale:
+          ID: "?"
+          Data:
+            - 111111
+            - 111111
+            - 111111
+        Tag:
+          ID: "?"
+          Data: null
+        OrderOffset:
+          ID: "?"
+          Data: 0
+        Components:
+          ID: "?"
+          Data:
+            - Type: 15
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.styledFont
+                TargetField:
+                  ID: "?"
+                  Data: ID:StyledText:Components:6:VariableName:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 16
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.size
+                TargetField:
+                  ID: "?"
+                  Data: ID:StyledText:Components:2:Size:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 15
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.content
+                TargetField:
+                  ID: "?"
+                  Data: ID:Flux:Components:7:Value:1
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 15
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.styledColor
+                TargetField:
+                  ID: "?"
+                  Data: ID:StyledText:Components:4:VariableName:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 17
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.defaultColor
+                TargetField:
+                  ID: "?"
+                  Data: ID:StyledText:Components:4:DefaultValue:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 15
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.styledMaterial
+                TargetField:
+                  ID: "?"
+                  Data: ID:StyledText:Components:5:VariableName:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 15
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.nullContent
+                TargetField:
+                  ID: "?"
+                  Data: ID:StyledText:Components:2:NullContent:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 16
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.lineHeight
+                TargetField:
+                  ID: "?"
+                  Data: ID:StyledText:Components:2:LineHeight:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 18
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.horizontalAutoSize
+                TargetField:
+                  ID: "?"
+                  Data: ID:StyledText:Components:2:HorizontalAutoSize:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 18
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.verticalAutoSize
+                TargetField:
+                  ID: "?"
+                  Data: ID:StyledText:Components:2:VerticalAutoSize:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 19
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.horizontalAlign
+                TargetField:
+                  ID: "?"
+                  Data: ID:StyledText:Components:2:HorizontalAlign:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 20
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.verticalAlign
+                TargetField:
+                  ID: "?"
+                  Data: ID:StyledText:Components:2:VerticalAlign:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 16
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.autoSizeMin
+                TargetField:
+                  ID: "?"
+                  Data: ID:StyledText:Components:2:AutoSizeMin:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 16
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.autoSizeMax
+                TargetField:
+                  ID: "?"
+                  Data: ID:StyledText:Components:2:AutoSizeMax:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 21
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.anchorMin
+                TargetField:
+                  ID: "?"
+                  Data: ID:StyledText:Components:3:AnchorMin:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 21
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.anchorMax
+                TargetField:
+                  ID: "?"
+                  Data: ID:StyledText:Components:3:AnchorMax:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 21
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.offsetMin
+                TargetField:
+                  ID: "?"
+                  Data: ID:StyledText:Components:3:OffsetMin:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 21
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.offsetMax
+                TargetField:
+                  ID: "?"
+                  Data: ID:StyledText:Components:3:OffsetMax:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 15
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.userID
+                TargetField:
+                  ID: "?"
+                  Data: ID:Flux:Components:7:Value:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+        Children: []
+        ParentReference: ""
+    ParentReference: ""
+ParentReference: ""
