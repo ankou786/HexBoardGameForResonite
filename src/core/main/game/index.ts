@@ -29,6 +29,10 @@ export class Game {
       return;
     }
 
+    // if (this.state.players.length === 1) {
+    //   playerId = "U-ankouHS aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+    // }
+
     // try {
     //   const response = await fetch(`https://api.resonite.com/users/${playerId}`);
     //   if (!response.ok) {
@@ -73,6 +77,7 @@ export class Game {
       players: this.state.players,
       map: new StageMap(),
       currentPlayer: currentPlayer,
+      round: 1,
     };
 
     for (let q = 0; q <= 11; q++) {
@@ -113,7 +118,27 @@ export class Game {
       blueCell.cellState = {
         type: "blue",
       };
+
     }
+      // red and blue cell
+      const halfCells = [
+        [11, 0],
+        [0, 11],
+        [0, 0],
+        [11, 11],
+      ] as HexCoordinates[];
+  
+      for (const coords of halfCells) {
+        const halfCell = this.state.map.grid.getHex(coords);
+        if (!halfCell) {
+          continue;
+        }
+  
+        halfCell.cellState = {
+          type: "half",
+        };
+      }
+
   }
 
   resetGame() {
@@ -152,10 +177,23 @@ export class Game {
     if (!player) {
       return;
     }
+    if (this.state.round === 2 ) {
+      if (cell.cellState.type !== "blank" && !cell.isFirst ) {
+        //console.log("fail swap cell:",cell.cellState.type,cell.isFirst);
+        return;
+      }
+    }else
+    {
+      if (cell.cellState.type !== "blank") return;
+    }
 
     cell.cellState = {
       type: player.color,
     };
+    if (this.state.round === 1) {
+      cell.isFirst=true;
+    }
+    this.changePlayer();
   }
 
   changePlayer() {
@@ -168,6 +206,8 @@ export class Game {
     if (!currentPlayer) {
       return;
     }
+
+    this.state.round = (this.state as GameStateInGame).round + 1;
 
     this.checkWin(currentPlayer.color);
     if (this.state.mode === "inGame") {

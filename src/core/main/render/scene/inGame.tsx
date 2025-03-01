@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback} from "react";
 import { Slot,LookAtUser } from "../../../unit/package/Primitive/main";
 import { Canvas} from "../../../unit/package/PrimitiveUix/main";
 import { Game } from "../../game";
@@ -14,14 +14,11 @@ export const InGameScene = ({ game,effect }: {game:Game,effect:()=>void }) => {
   const currentGameState = game.state as GameStateInGame;
 
   const handleHexClick = useCallback((cell: Cell, env: FunctionEnv) => {
-    if (cell.cellState.type !== "blank") return;
     if (currentGameState.currentPlayer.id !== env.userId) {
       console.log("not your turn:",currentGameState.currentPlayer, env.userId);
       return;
     }
     game.setCellState(cell, env.userId);
-    game.changePlayer();
-  
     effect();
   }, []);
 

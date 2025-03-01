@@ -15,6 +15,7 @@ export type GameStateInGame = GameStateCommon & {
   mode: "inGame";
   map: StageMap;
   currentPlayer: Player;
+  round: number;
 };
 
 export type GameStateResult = GameStateCommon & {

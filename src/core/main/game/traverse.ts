@@ -41,7 +41,7 @@ function aStarSearch(grid: Grid<Cell>, start: HexCoordinates, goal: HexCoordinat
 
     const neighborGrids = grid.traverse(ring<Cell>({ center: [current.q, current.r], radius: 1 }));
     for (const neighbor of neighborGrids) {
-      if (neighbor.cellState.type !== color) continue;
+      if (neighbor.cellState.type !== color && neighbor.cellState.type !== "half" ) continue;
 
       const tentativeGScore = (gScore.get(current) ?? Infinity) + 1;
 

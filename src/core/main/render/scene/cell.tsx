@@ -12,6 +12,9 @@ export const CellRender = ({ cell }: { cell: Cell }) => {
     case "blue":
       material = Material.blue;
       break;
+    case "half":
+      material = Material.purple;
+      break;
     case "winBlue":
       material = Material.winBlue;
       break;

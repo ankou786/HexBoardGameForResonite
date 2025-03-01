@@ -3,12 +3,13 @@ import { Grid, rectangle, Direction } from "honeycomb-grid";
 import { Hex } from "honeycomb-grid";
 
 export type CellState = {
-  type: "blank" | "red" | "blue" | "winRed" | "winBlue";
+  type: "blank" | "half" | "red" | "blue" | "winRed" | "winBlue";
 };
 
 export class Cell extends Hex {
   cellState: CellState = { type: "blank" };
-
+  isFirst: boolean = false;
+  
   get tuple() {
     return [this.q, this.r] as [number, number];
   }

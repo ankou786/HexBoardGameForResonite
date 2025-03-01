@@ -63,6 +63,9 @@ export const { StyledSpace, Color, Sprite, Material, Font, Mesh } = createStyle(
       gray: createPBSMetallicMaterial({
         albedoColor: [0.3, 0.3, 0.3, 1],
       }),
+      purple: createPBSMetallicMaterial({
+        albedoColor: [0.5, 0.1, 0.5, 1],
+      }),
       white: createPBSMetallicMaterial({
         albedoColor: [0.1, 0.1, 0.1, 1],
       }),
