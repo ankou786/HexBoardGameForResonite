@@ -8,6 +8,7 @@ type GameStateCommon = {
 
 export type GameStateLobby = GameStateCommon & {
   mode: "lobby";
+  message?: string;
 };
 
 export type GameStateInGame = GameStateCommon & {
@@ -18,6 +19,7 @@ export type GameStateInGame = GameStateCommon & {
 
 export type GameStateResult = GameStateCommon & {
   mode: "result";
+  map: StageMap;
   winner: string;
 };
 

@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { Slot,LookAtUser } from "../../../unit/package/Primitive/main";
 import { Canvas} from "../../../unit/package/PrimitiveUix/main";
 import { Game } from "../../game";
@@ -34,8 +34,10 @@ export const InGameScene = ({ game,effect }: {game:Game,effect:()=>void }) => {
               <StyledText 
                 content={ "Player Turn : " + currentGameState.currentPlayer.id }
                 horizontalAlign="Center"
+                horizontalAutoSize
                 styledColor={Color.white}
                 verticalAlign="Middle"
+                verticalAutoSize
               />
           </StyledImage>
         </Canvas>

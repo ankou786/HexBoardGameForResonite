@@ -17,16 +17,21 @@ export class Game {
   }
 
   addPlayer(playerId: string) {
+    if (this.state.mode !== "lobby") {
+      return;
+    }
     if (this.state.players.length >= 2) {
+      this.state.message = "The game is full";
       return;
     }
 
     if (this.state.players.some((player) => player.id === playerId)) {
+      this.state.message = "You are already in the game";
       return;
     }
 
     // if (this.state.players.length === 1) {
-    //   playerId = "U-ankouHS";
+    //   playerId = "U-ankouHS aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
     // }
 
     const playerColor: "red" | "blue" = this.state.players.length === 0 ? "red" : "blue";
@@ -46,7 +51,10 @@ export class Game {
   }
 
   startGame() {
-    if (this.state.mode !== "lobby" || this.state.players.length < 2) {
+    if (this.state.mode !== "lobby") return 
+    
+    if(this.state.players.length < 2) {
+      this.state.message = "Not enough players";
       return;
     }
     const randomIndex = Math.floor(Math.random() * this.state.players.length);
@@ -154,7 +162,7 @@ export class Game {
     if (!currentPlayer) {
       return;
     }
-
+    //console.log("change player: " + currentPlayer.color);
     this.checkWin (currentPlayer.color);
     if (this.state.mode === "inGame") {
       const nextPlayer = this.state.players.find(
@@ -170,6 +178,7 @@ export class Game {
     if (this.state.mode !== "inGame") {
       return;
     }
+    const map = this.state.map;
     if(color === undefined){
       return;
     }
@@ -184,20 +193,29 @@ export class Game {
       dstCell = [9, 2];
     }
     //console.log("check win: " + srcCell, color);
-    const traverser = this.state.map.grid.traverse(
-      customLine({ start: srcCell , stop: dstCell , grid: this.state.map.grid, color: color}),
+    const traverser = map.grid.traverse(
+      customLine({ start: srcCell , stop: dstCell , grid: map.grid, color: color}),
     );
     //console.log(traverser.toArray());
-    if (traverser.toArray().length > 2) {
-      console.log(color + " win");
+    const traversedCells = traverser.toArray();
+    if (traversedCells.length > 2) {
+      //console.log(color + " win");
       const winner = this.state.players.find(
         (player) => player.color === color
       );
-      //console.log(winner);
+      traversedCells.forEach((cell) => {
+        const mapCell = map.grid.getHex(cell);
+        if (mapCell) {
+          mapCell.cellState = {
+            type: color === "red" ? "winRed" : "winBlue",
+          };
+        }
+      });
       if (winner) {
         this.state = {
           mode: "result",
           players: this.state.players,
+          map: this.state.map,
           winner: winner.id,
         }
       }

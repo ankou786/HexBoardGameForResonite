@@ -15,7 +15,7 @@ export const { StyledSpace, Color, Sprite, Material, Font, Mesh } = createStyle(
       black: createColor([0.07, 0.08, 0.11, 1]),
       darkGray: createColor([0.17, 0.18, 0.21, 1]),
       red: createColor([1, 0, 0, 1]),
-      blue: createColor([0, 0, 1, 1]),
+      blue: createColor([0, 0, 2, 1]),
       buttonNormal: createColor([1, 1, 1, 1]),
       buttonHighlight: createColor([2, 2, 2, 1]),
       buttonPress: createColor([0.75, 0.75, 0.75, 1]),
@@ -50,6 +50,12 @@ export const { StyledSpace, Color, Sprite, Material, Font, Mesh } = createStyle(
       }),
       blue: createPBSMetallicMaterial({
         albedoColor: [0.1, 0.1, 0.5, 1],
+      }),
+      winRed: createPBSMetallicMaterial({
+        albedoColor: [2.5, 0.1, 0.1, 1],
+      }),
+      winBlue: createPBSMetallicMaterial({
+        albedoColor: [0.1, 0.1, 2.5, 1],
       }),
       brown: createPBSMetallicMaterial({
         albedoColor: [0.5, 0.3, 0.1, 1],

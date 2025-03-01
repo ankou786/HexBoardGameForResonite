@@ -2,18 +2,8 @@ import { Grid, rectangle, Direction } from "honeycomb-grid";
 
 import { Hex } from "honeycomb-grid";
 
-export type CellState = BlankCell | RedCell | BlueCell;
-
-export type BlankCell = {
-  type: "blank";
-};
-
-export type RedCell = {
-  type: "red";
-};
-
-export type BlueCell = {
-  type: "blue";
+export type CellState = {
+  type: "blank" | "red" | "blue" | "winRed" | "winBlue";
 };
 
 export class Cell extends Hex {

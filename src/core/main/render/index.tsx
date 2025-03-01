@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Slot } from "../../unit/package/Primitive/main";
 import { Game } from "../game";
 import { FunctionEnv } from "../../../lib/miragex/common/interactionEvent";
-import { Canvas, VerticalLayout, HorizontalLayout } from "../../unit/package/PrimitiveUix/main";
+import { Canvas, VerticalLayout, HorizontalLayout, LayoutElement } from "../../unit/package/PrimitiveUix/main";
 import { StyledButton, StyledImage, StyledText } from "../../unit/package/StyledUix/main";
 import { SceneRender } from "./scene";
 import { StyledSpace, Sprite, Color, Material } from "./style";
@@ -94,32 +94,44 @@ export const Main = () => {
               spacing={5}
             >
               <HorizontalLayout>
-                <StyledText
-                  content="Player Red : "
-                  horizontalAlign="Center"
-                  styledColor={Color.red}
-                  verticalAlign="Middle"
-                />
-                <StyledText
-                  content={redPlayer}
-                  horizontalAlign="Center"
-                  styledColor={Color.white}
-                  verticalAlign="Middle"
-                />
+                <LayoutElement minWidth={380}>
+                  <StyledText
+                    content="Player Red : "
+                    horizontalAlign="Center"
+                    styledColor={Color.red}
+                    verticalAlign="Middle"
+                    verticalAutoSize
+                  />
+                </LayoutElement>
+                <LayoutElement minWidth={500}>
+                  <StyledText
+                    content={redPlayer}
+                    horizontalAlign="Center"
+                    styledColor={Color.white}
+                    verticalAlign="Middle"
+                    verticalAutoSize
+                  />
+                </LayoutElement>
               </HorizontalLayout>
               <HorizontalLayout>
-                <StyledText
-                  content="Player Blue : "
-                  horizontalAlign="Center"
-                  styledColor={Color.blue}
-                  verticalAlign="Middle"
-                />
-                <StyledText
-                  content={bluePlayer}
-                  horizontalAlign="Center"
-                  styledColor={Color.white}
-                  verticalAlign="Middle"
-                />
+                <LayoutElement minWidth={380}>
+                  <StyledText
+                    content="Player Blue : "
+                    horizontalAlign="Center"
+                    styledColor={Color.blue}
+                    verticalAlign="Middle"
+                    verticalAutoSize
+                  />
+                </LayoutElement>
+                <LayoutElement minWidth={500}>
+                  <StyledText
+                    content={bluePlayer}
+                    horizontalAlign="Center"
+                    styledColor={Color.white}
+                    verticalAlign="Middle"
+                    verticalAutoSize
+                  />
+                </LayoutElement>
               </HorizontalLayout>
               <StyledButton
                 enabled={gameMode === "lobby"}
