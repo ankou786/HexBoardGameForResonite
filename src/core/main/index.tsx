@@ -1,5 +1,6 @@
-import { SampleSwitcher } from "./sampleSwitcher";
+import { Main } from "./render";
+//import { HexTest } from "./hex-boradgame";
 
 export const App = () => {
-  return <SampleSwitcher />;
+  return <Main />;
 };

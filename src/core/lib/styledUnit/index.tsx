@@ -1,8 +1,11 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import {
+  StyledDVBoxMesh,
   StyledDVColor,
+  StyledDVCylinderMesh,
   StyledDVFont,
+  StyledDVPBSMetallicMaterial,
   StyledDVSpace,
   StyledDVSprite,
   StyledDVUiTextUnlitMaterial,
@@ -43,9 +46,19 @@ type StyledUiTextUnlitMaterialConfig = {
   zWrite?: "Auto" | "On" | "Off";
 };
 
-type StyledMaterial =
+type StyledPBSMetallicMaterialConfig = {
+  type: "PBSMetallicMaterial";
+  albedoColor?:
+    | [number, number, number, number]
+    | [number, number, number, number, "sRGB" | "sRGBAlpha" | "Linear"];
+  metallic?: number;
+  smoothness?: number;
+};
+
+type StyledMaterialConfig =
   | StyledUiUnlitMaterialConfig
-  | StyledUiTextUnlitMaterialConfig;
+  | StyledUiTextUnlitMaterialConfig
+  | StyledPBSMetallicMaterialConfig;
 
 type StyledFontConfig = {
   type: "Font";
@@ -62,6 +75,22 @@ type StyledFontConfig = {
     string?,
   ];
 };
+
+type StyledBoxMeshConfig = {
+  type: "BoxMesh";
+  size?: [number, number, number];
+};
+
+type StyledCylinderMeshConfig = {
+  type: "CylinderMesh";
+  height?: number;
+  radius?: number;
+  sides?: number;
+  caps?: boolean;
+  flatShading?: boolean;
+};
+
+type StyledMeshConfig = StyledBoxMeshConfig | StyledCylinderMeshConfig;
 
 // type StyledConfig = StyledColorConfig | StyledSpriteConfig;
 
@@ -135,11 +164,50 @@ export const createUiTextUnlitMaterial = ({
   zWrite,
 });
 
+export const createPBSMetallicMaterial = ({
+  albedoColor,
+  metallic,
+  smoothness,
+}: {
+  albedoColor?:
+    | [number, number, number, number]
+    | [number, number, number, number, "sRGB" | "sRGBAlpha" | "Linear"];
+  metallic?: number;
+  smoothness?: number;
+}): StyledPBSMetallicMaterialConfig => ({
+  type: "PBSMetallicMaterial",
+  albedoColor,
+  metallic,
+  smoothness,
+});
+
 export const createFont = ({
   urls,
 }: Omit<StyledFontConfig, "type">): StyledFontConfig => ({
   type: "Font",
   urls,
+});
+
+export const createBoxMesh = ({
+  size,
+}: Omit<StyledBoxMeshConfig, "type">): StyledBoxMeshConfig => ({
+  type: "BoxMesh",
+  size,
+});
+
+export const createCylinderMesh = ({
+  height,
+  radius,
+  sides,
+  caps,
+  flatShading,
+}: Omit<StyledCylinderMeshConfig, "type">): StyledCylinderMeshConfig => ({
+  type: "CylinderMesh",
+  height,
+  radius,
+  sides,
+  caps,
+  flatShading,
 });
 
 export type StyledColorVariable = {
@@ -153,7 +221,7 @@ export type StyledSpriteVariable = {
 };
 
 export type StyledMaterialVariable = {
-  type: "UiUnlitMaterial" | "UiTextUnlitMaterial";
+  type: StyledMaterialConfig["type"];
   variableName: string;
 };
 
@@ -162,22 +230,30 @@ export type StyledFontVariable = {
   variableName: string;
 };
 
+export type StyledMeshVariable = {
+  type: StyledMeshConfig["type"];
+  variableName: string;
+};
+
 export type StyledVariable =
   | StyledColorVariable
   | StyledSpriteVariable
   | StyledMaterialVariable
-  | StyledFontVariable;
+  | StyledFontVariable
+  | StyledMeshVariable;
 
 export const createStyle = <
   C extends { [key: string]: StyledColorConfig },
   S extends { [key: string]: StyledSpriteConfig },
-  M extends { [key: string]: StyledMaterial },
+  M extends { [key: string]: StyledMaterialConfig },
   F extends { [key: string]: StyledFontConfig },
+  Mh extends { [key: string]: StyledMeshConfig },
 >(config: {
   Color?: C;
   Sprite?: S;
   Material?: M;
   Font?: F;
+  Mesh?: Mh;
 }): {
   StyledSpace: React.FC<{ children: React.ReactNode }>;
   Color: {
@@ -191,6 +267,9 @@ export const createStyle = <
   };
   Font: {
     [key in keyof F]: StyledFontVariable;
+  };
+  Mesh: {
+    [key in keyof Mh]: StyledMeshVariable;
   };
 } => {
   const spaceName = createId();
@@ -218,7 +297,7 @@ export const createStyle = <
   );
 
   const materialVariables = Object.keys(config.Material ?? []).map(
-    (key): { key: keyof M; variableName: string } & StyledMaterial => ({
+    (key): { key: keyof M; variableName: string } & StyledMaterialConfig => ({
       ...(config.Material?.[key] ?? {
         type: "UiUnlitMaterial",
         offsetFactor: 0,
@@ -237,6 +316,17 @@ export const createStyle = <
       ...(config.Font?.[key] ?? {
         type: "Font",
         urls: ["", "", "", "", "", "", "", "", "", ""],
+      }),
+      variableName: `${spaceName}/${createId()}`,
+      key,
+    }),
+  );
+
+  const meshVariables = Object.keys(config.Mesh ?? []).map(
+    (key): { key: keyof Mh; variableName: string } & StyledMeshConfig => ({
+      ...(config.Mesh?.[key] ?? {
+        type: "BoxMesh",
+        size: [1, 1, 1],
       }),
       variableName: `${spaceName}/${createId()}`,
       key,
@@ -290,6 +380,16 @@ export const createStyle = <
                   zWrite={variable.zWrite}
                 />
               );
+            case "PBSMetallicMaterial":
+              return (
+                <StyledDVPBSMetallicMaterial
+                  albedoColor={variable.albedoColor}
+                  key={variable.variableName}
+                  metallic={variable.metallic}
+                  name={variable.variableName}
+                  smoothness={variable.smoothness}
+                />
+              );
           }
         })}
         {fontVariables.map((variable) => (
@@ -308,6 +408,30 @@ export const createStyle = <
             url9={variable.urls[9]}
           />
         ))}
+        {meshVariables.map((variable) => {
+          switch (variable.type) {
+            case "BoxMesh":
+              return (
+                <StyledDVBoxMesh
+                  key={variable.variableName}
+                  name={variable.variableName}
+                  size={variable.size}
+                />
+              );
+            case "CylinderMesh":
+              return (
+                <StyledDVCylinderMesh
+                  caps={variable.caps}
+                  flatShading={variable.flatShading}
+                  height={variable.height}
+                  key={variable.variableName}
+                  name={variable.variableName}
+                  radius={variable.radius}
+                  sides={variable.sides}
+                />
+              );
+          }
+        })}
         {children}
       </StyledDVSpace>
     ),
@@ -357,6 +481,18 @@ export const createStyle = <
       ),
       {} as {
         [key in keyof F]: StyledFontVariable;
+      },
+    ),
+    Mesh: meshVariables.reduce(
+      (acc, variable) => (
+        (acc[variable.key] = {
+          type: variable.type,
+          variableName: variable.variableName,
+        }),
+        acc
+      ),
+      {} as {
+        [key in keyof Mh]: StyledMeshVariable;
       },
     ),
   };
